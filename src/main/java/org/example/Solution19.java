@@ -15,12 +15,11 @@ public class Solution19 {
         Map<Integer, ListNode> numForNodeMap = new HashMap<>();
 
         ListNode node = head;
-        int nodeNum = 1;
-        numForNodeMap.put(nodeNum, node);
-        while (node.next != null) {
+        int nodeNum = 0;
+        while (node != null) {
             ++nodeNum;
-            node = node.next;
             numForNodeMap.put(nodeNum, node);
+            node = node.next;
         }
 
         ListNode delNode = numForNodeMap.get(nodeNum - n + 1);
