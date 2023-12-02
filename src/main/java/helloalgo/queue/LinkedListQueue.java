@@ -1,23 +1,20 @@
-package helloalgo.stack;
+package helloalgo.queue;
 
 import helloalgo.ListNode;
 
-/**
- * 基于链表实现的栈
- */
-public class LinkedListStack<T> implements Stack<T> {
+public class LinkedListQueue<T> implements Queue<T> {
+    private ListNode<T> head;
+    private ListNode<T> tail;
+    private int queueSize;
 
-    private ListNode<T> stack;
-
-    private int stackSize;
-
-    public LinkedListStack() {
-        stack = null;
+    public LinkedListQueue() {
+        head = null;
+        tail = null;
     }
 
     @Override
     public int size() {
-        return stackSize;
+        return queueSize;
     }
 
     @Override
@@ -28,9 +25,14 @@ public class LinkedListStack<T> implements Stack<T> {
     @Override
     public void push(T t) {
         ListNode<T> node = new ListNode<>(t);
-        node.next = stack;
-        stack = node;
-        stackSize++;
+        if (head == null) {
+            head = node;
+            tail = node;
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+        queueSize++;
     }
 
     @Override
@@ -39,8 +41,8 @@ public class LinkedListStack<T> implements Stack<T> {
             throw new IndexOutOfBoundsException();
         }
         T val = peek();
-        stack = stack.next;
-        stackSize--;
+        head = head.next;
+        queueSize--;
         return val;
     }
 
@@ -49,12 +51,6 @@ public class LinkedListStack<T> implements Stack<T> {
         if (isEmpty()) {
             throw new IndexOutOfBoundsException();
         }
-        return stack.val;
-    }
-
-    @Override
-    public T[] toArray() {
-        return null;
+        return head.val;
     }
 }
-
