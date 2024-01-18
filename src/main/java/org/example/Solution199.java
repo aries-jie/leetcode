@@ -30,16 +30,16 @@ public class Solution199 {
     }
 
     private void dfs(List<Integer> res, TreeNode node, int index) {
-       if (node == null) {
-           return;
-       }
+        if (node == null) {
+            return;
+        }
         if (res.size() < index + 1) {
             res.add(node.val);
         } else {
             res.set(index, node.val);
         }
-       dfs(res, node.left, index + 1);
-       dfs(res, node.right, index + 1);
+        dfs(res, node.left, index + 1);
+        dfs(res, node.right, index + 1);
     }
 
     public static void main(String[] args) {
