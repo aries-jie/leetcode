@@ -11,12 +11,14 @@ import java.util.Arrays;
 public class Solution238 {
 
     /**
-     * 使用前缀积和后缀积的方式来解答
-     * 1   2   3   4
+     * 输入
+     *      1   2   3   4
      * 前缀积
-     * 1   1   2   6
+     *      1   1   2   6
      * 后缀积
-     * 24  12  4   1
+     *      24  12  4   1
+     * 答案
+     *      24  12  8   6
      */
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
