@@ -4,7 +4,7 @@ package org.example;
  * 矩阵对角线元素的和
  *
  * @author xiaojie.huang
- * @date 2024-01-21
+ * @date 2024-01-22
  */
 public class Solution1572 {
     public int diagonalSum(int[][] mat) {
