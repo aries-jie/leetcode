@@ -13,7 +13,7 @@ public class Solution198 {
      * nums = 1 2 3 1
      * 推导出公式：dp[i] = max(nums[i] + dp[i - 2], dp[i - 1])
      * dp[0] = 1;
-     * dp[1] = 2;
+     * dp[1] = max(nums[0], nums[1]);
      * dp[2] = max(3 + 1, 2) = 4;
      * dp[3] = max(1 + 2, 4) = 4;
      *
